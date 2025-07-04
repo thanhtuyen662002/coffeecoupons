@@ -82,7 +82,7 @@ function runAtMidnight(callback) {
   const now = new Date();
   const nextMidnight = new Date();
 
-  nextMidnight.setHours(24, 0, 0, 0); // 0h sáng ngày hôm sau
+  nextMidnight.setHours(3, 0, 0, 0); // 0h sáng ngày hôm sau
   const msUntilMidnight = nextMidnight.getTime() - now.getTime();
 
   // Đợi tới 0h để chạy lần đầu
