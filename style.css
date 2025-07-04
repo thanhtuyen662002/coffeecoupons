@@ -137,26 +137,16 @@ header p {
   pointer-events: auto;
 }
 
-.carousel-item.prev {
-  transform: scale(0.8) translateX(-150px);
-  z-index: 2;
-  opacity: 0.6;
-}
-
+.carousel-item.prev,
 .carousel-item.next {
-  transform: scale(0.8) translateX(150px);
+  transform: scale(0.8) translateX(calc(var(--direction) * 150px));
   z-index: 2;
   opacity: 0.6;
 }
 
-.carousel-item.prev-prev {
-  transform: scale(0.6) translateX(-300px);
-  z-index: 1;
-  opacity: 0.3;
-}
-
+.carousel-item.prev-prev,
 .carousel-item.next-next {
-  transform: scale(0.6) translateX(300px);
+  transform: scale(0.6) translateX(calc(var(--direction) * 300px));
   z-index: 1;
   opacity: 0.3;
 }

@@ -73,7 +73,6 @@ function updateAllCarousels() {
   fetchAndReplaceImages("kcoffee", ".coupon-container a:nth-of-type(3) .carousel");
 }
 
-
 // Gọi hàm khi trang đã load
 window.addEventListener("DOMContentLoaded", () => {
   updateAllCarousels();
