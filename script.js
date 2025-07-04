@@ -29,7 +29,7 @@ function setupCarousel(carouselElement) {
   }
 
   updateCarousel();
-  setInterval(nextSlide, 3000);
+  setInterval(nextSlide, 2000);
 }
 
 // Khởi chạy cho tất cả carousel trên trang
@@ -102,8 +102,3 @@ function runAtMidnight(callback) {
 runAtMidnight(() => {
   updateAllCarousels();
 });
-
-setTimeout(() => {
-  updateAllCarousels();
-}, 500000); // 5 giây sau sẽ cập nhật lại
-
