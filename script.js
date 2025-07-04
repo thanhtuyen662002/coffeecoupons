@@ -32,11 +32,6 @@ function setupCarousel(carouselElement) {
   setInterval(nextSlide, 2000);
 }
 
-// Khởi chạy cho tất cả carousel trên trang
-document.querySelectorAll(".carousel").forEach((carousel) => {
-  setupCarousel(carousel);
-});
-
 async function fetchAndReplaceImages(brand, carouselSelector) {
   const proxy = "https://scraper-api-production-ea0b.up.railway.app/api/";
 
