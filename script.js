@@ -32,13 +32,6 @@ function setupCarousel(carouselElement) {
   setInterval(nextSlide, 2000);
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  updateAllCarousels();
-  const highlandsZaloCarousel = document.querySelector(".coupon-container a:nth-of-type(2) .carousel");
-  setupCarousel(highlandsZaloCarousel);
-});
-
-
 async function fetchAndReplaceImages(brand, carouselSelector) {
   const proxy = "https://scraper-api-production-ea0b.up.railway.app/api/";
 
@@ -78,6 +71,8 @@ function updateAllCarousels() {
   fetchAndReplaceImages("highlands", ".coupon-container a:nth-of-type(1) .carousel");
   fetchAndReplaceImages("thecoffeehouse", ".coupon-container a:nth-of-type(3) .carousel");
   fetchAndReplaceImages("kcoffee", ".coupon-container a:nth-of-type(4) .carousel");
+  const highlandsZaloCarousel = document.querySelector(".coupon-container a:nth-of-type(2) .carousel");
+  setupCarousel(highlandsZaloCarousel);
 }
 
 // Gọi hàm khi trang đã load
