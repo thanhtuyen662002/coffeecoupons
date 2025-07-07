@@ -4,23 +4,38 @@ function setupCarousel(carouselElement) {
   const total = items.length;
 
   function updateCarousel() {
-    items.forEach((item, index) => {
+    items.forEach((item) => {
       item.classList.remove("active", "prev", "next", "prev-prev", "next-next");
       item.style.setProperty("--direction", "0");
     });
 
     const getIndex = (offset) => (current + offset + total) % total;
 
-    items[getIndex(0)].classList.add("active");
-    items[getIndex(-1)].classList.add("prev");
-    items[getIndex(1)].classList.add("next");
-    items[getIndex(-2)].classList.add("prev-prev");
-    items[getIndex(2)].classList.add("next-next");
+    if (total === 1) {
+      items[0].classList.add("active");
+    } else if (total === 2) {
+      items[getIndex(0)].classList.add("active");
+      items[getIndex(1)].classList.add("next");
+      items[getIndex(1)].style.setProperty("--direction", 1);
+    } else if (total === 3) {
+      items[getIndex(0)].classList.add("active");
+      items[getIndex(-1)].classList.add("prev");
+      items[getIndex(1)].classList.add("next");
 
-    items[getIndex(-1)].style.setProperty("--direction", -1);
-    items[getIndex(-2)].style.setProperty("--direction", -1);
-    items[getIndex(1)].style.setProperty("--direction", 1);
-    items[getIndex(2)].style.setProperty("--direction", 1);
+      items[getIndex(-1)].style.setProperty("--direction", -1);
+      items[getIndex(1)].style.setProperty("--direction", 1);
+    } else {
+      items[getIndex(0)].classList.add("active");
+      items[getIndex(-1)].classList.add("prev");
+      items[getIndex(1)].classList.add("next");
+      items[getIndex(-2)].classList.add("prev-prev");
+      items[getIndex(2)].classList.add("next-next");
+
+      items[getIndex(-1)].style.setProperty("--direction", -1);
+      items[getIndex(-2)].style.setProperty("--direction", -1);
+      items[getIndex(1)].style.setProperty("--direction", 1);
+      items[getIndex(2)].style.setProperty("--direction", 1);
+    }
   }
 
   function nextSlide() {
@@ -29,7 +44,10 @@ function setupCarousel(carouselElement) {
   }
 
   updateCarousel();
-  setInterval(nextSlide, 2000);
+
+  if (total > 1) {
+    setInterval(nextSlide, 2000);
+  }
 }
 
 async function fetchAndReplaceImages(brand, carouselSelector) {
