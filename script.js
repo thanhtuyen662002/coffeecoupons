@@ -91,6 +91,10 @@ function updateAllCarousels() {
   fetchAndReplaceImages("kcoffee", ".coupon-container a:nth-of-type(4) .carousel");
   const highlandsZaloCarousel = document.querySelector(".coupon-container a:nth-of-type(2) .carousel");
   setupCarousel(highlandsZaloCarousel);
+  const chickitaCarousel = document.querySelector(".coupon-container a:nth-of-type(5) .carousel");
+  setupCarousel(chickitaCarousel);
+  const zumwhereCarousel = document.querySelector(".coupon-container a:nth-of-type(6) .carousel");
+  setupCarousel(zumwhereCarousel);
 }
 
 // Gọi hàm khi trang đã load
