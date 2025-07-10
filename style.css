@@ -59,6 +59,12 @@ header p {
   line-height: 1.7;
 }
 
+.guideline a {
+  color: #c41d7f;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
 .guideline span {
   font-weight: bold;
   color: #c41d7f;
@@ -81,6 +87,10 @@ header p {
   display: block;
   margin: 10px auto 0;
   border-radius: 2px;
+}
+
+.coupon-container p {
+  font-size: 16px;
 }
 
 /* Coupon item wrapper */
